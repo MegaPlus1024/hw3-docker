@@ -1,0 +1,382 @@
+Docker Compose version v5.7.0
+
+1. Новый проект hw3-check-20021-26705-18497
+ Image redis:7.4-alpine Pulling 
+ 4a603bc2424c Pulling fs layer 0B
+ ad83137ff0b2 Pulling fs layer 0B
+ 710f3da1112f Pulling fs layer 0B
+ 6c0bde7286d0 Pulling fs layer 0B
+ 0e50696bc150 Pulling fs layer 0B
+ f55179448640 Pulling fs layer 0B
+ 4f4fb700ef54 Pulling fs layer 0B
+ 4a603bc2424c Downloading 600B
+ 4a603bc2424c Downloading 600B
+ 4a603bc2424c Downloading 600B
+ 4a603bc2424c Downloading 600B
+ 4a603bc2424c Downloading 600B
+ 4a603bc2424c Download complete 0B
+ ad83137ff0b2 Downloading 200.3kB
+ ad83137ff0b2 Downloading 200.3kB
+ ad83137ff0b2 Downloading 200.3kB
+ ad83137ff0b2 Downloading 200.3kB
+ ad83137ff0b2 Downloading 200.3kB
+ ad83137ff0b2 Download complete 0B
+ 6c0bde7286d0 Download complete 0B
+ 0e50696bc150 Downloading 99B
+ 710f3da1112f Downloading 1.049MB
+ 0e50696bc150 Download complete 0B
+ f55179448640 Downloading 1.049MB
+ f55179448640 Downloading 1.049MB
+ 710f3da1112f Downloading 1.049MB
+ 710f3da1112f Downloading 1.049MB
+ f55179448640 Downloading 1.049MB
+ f55179448640 Downloading 1.049MB
+ 710f3da1112f Downloading 1.049MB
+ f55179448640 Downloading 1.049MB
+ 710f3da1112f Downloading 1.049MB
+ 4f4fb700ef54 Download complete 0B
+ f55179448640 Downloading 1.049MB
+ 710f3da1112f Downloading 2.097MB
+ f55179448640 Downloading 2.097MB
+ 710f3da1112f Downloading 2.097MB
+ f55179448640 Downloading 2.097MB
+ 710f3da1112f Downloading 2.097MB
+ 710f3da1112f Downloading 2.097MB
+ f55179448640 Downloading 2.097MB
+ f55179448640 Downloading 2.097MB
+ 710f3da1112f Downloading 3.146MB
+ 5864e364268f Download complete 0B
+ f55179448640 Downloading 3.146MB
+ 710f3da1112f Downloading 3.146MB
+ f55179448640 Downloading 3.146MB
+ 710f3da1112f Download complete 0B
+ f55179448640 Downloading 3.146MB
+ 710f3da1112f Extracting 1B
+ dfed3a5d50b9 Download complete 0B
+ f55179448640 Downloading 3.146MB
+ 710f3da1112f Extracting 1B
+ f55179448640 Downloading 3.146MB
+ 710f3da1112f Extracting 1B
+ f55179448640 Downloading 3.146MB
+ 710f3da1112f Extracting 1B
+ f55179448640 Downloading 3.146MB
+ 710f3da1112f Extracting 1B
+ f55179448640 Downloading 3.146MB
+ 710f3da1112f Pull complete 0B
+ f55179448640 Downloading 3.146MB
+ ad83137ff0b2 Extracting 1B
+ 6c0bde7286d0 Pull complete 0B
+ f55179448640 Downloading 3.146MB
+ ad83137ff0b2 Extracting 1B
+ f55179448640 Downloading 4.194MB
+ ad83137ff0b2 Extracting 1B
+ f55179448640 Downloading 4.194MB
+ f55179448640 Downloading 4.194MB
+ ad83137ff0b2 Pull complete 0B
+ f55179448640 Downloading 4.194MB
+ f55179448640 Downloading 4.194MB
+ f55179448640 Downloading 4.194MB
+ f55179448640 Downloading 4.194MB
+ f55179448640 Downloading 4.194MB
+ f55179448640 Downloading 4.194MB
+ f55179448640 Downloading 5.243MB
+ f55179448640 Downloading 5.243MB
+ f55179448640 Downloading 5.243MB
+ f55179448640 Downloading 5.243MB
+ f55179448640 Downloading 5.243MB
+ f55179448640 Downloading 5.243MB
+ f55179448640 Downloading 5.243MB
+ f55179448640 Downloading 5.243MB
+ f55179448640 Downloading 6.291MB
+ f55179448640 Downloading 6.291MB
+ f55179448640 Downloading 6.291MB
+ f55179448640 Downloading 6.291MB
+ f55179448640 Downloading 6.291MB
+ f55179448640 Downloading 6.291MB
+ f55179448640 Downloading 6.291MB
+ f55179448640 Downloading 7.34MB
+ f55179448640 Downloading 7.34MB
+ f55179448640 Downloading 8.389MB
+ f55179448640 Downloading 8.389MB
+ f55179448640 Downloading 8.389MB
+ f55179448640 Downloading 9.437MB
+ f55179448640 Downloading 9.437MB
+ f55179448640 Downloading 9.437MB
+ f55179448640 Downloading 10.49MB
+ f55179448640 Downloading 10.49MB
+ f55179448640 Downloading 10.49MB
+ f55179448640 Downloading 10.49MB
+ f55179448640 Downloading 11.53MB
+ f55179448640 Downloading 11.53MB
+ f55179448640 Downloading 11.53MB
+ f55179448640 Downloading 11.53MB
+ f55179448640 Downloading 11.53MB
+ f55179448640 Downloading 11.53MB
+ f55179448640 Download complete 0B
+ f55179448640 Extracting 1B
+ f55179448640 Extracting 1B
+ f55179448640 Extracting 1B
+ f55179448640 Extracting 1B
+ f55179448640 Extracting 1B
+ f55179448640 Pull complete 0B
+ 0e50696bc150 Extracting 1B
+ 0e50696bc150 Pull complete 0B
+ 4f4fb700ef54 Extracting 1B
+ 4f4fb700ef54 Pull complete 0B
+ 4a603bc2424c Pull complete 0B
+ Image redis:7.4-alpine Pulled 
+ Image hw3-check-20021-26705-18497-app Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 506B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 384B done
+#2 DONE 0.1s
+
+#3 [internal] load metadata for docker.io/library/python:3.13-slim
+#3 DONE 0.9s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 95B done
+#4 DONE 0.2s
+
+#5 [internal] load build context
+#5 transferring context: 94B done
+#5 DONE 0.1s
+
+#6 [1/6] FROM docker.io/library/python:3.13-slim@sha256:e48f59cdba69a3cbd9ed2cf0f348d90d45a8d350d98134cf1070bc106ee9ed90
+#6 resolve docker.io/library/python:3.13-slim@sha256:e48f59cdba69a3cbd9ed2cf0f348d90d45a8d350d98134cf1070bc106ee9ed90
+#6 resolve docker.io/library/python:3.13-slim@sha256:e48f59cdba69a3cbd9ed2cf0f348d90d45a8d350d98134cf1070bc106ee9ed90 0.1s done
+#6 DONE 0.2s
+
+#7 [3/6] COPY app/requirements.txt .
+#7 CACHED
+
+#8 [4/6] RUN pip install --no-cache-dir -r requirements.txt
+#8 CACHED
+
+#9 [5/6] RUN useradd --create-home --uid 1000 --user-group app     && mkdir -p /data     && chown app:app /data
+#9 CACHED
+
+#10 [2/6] WORKDIR /app
+#10 CACHED
+
+#11 [6/6] COPY app/app.py .
+#11 CACHED
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 0.0s done
+#12 exporting manifest sha256:697108f9e5d157888b502eb8781aca59819a10ac5c6991183c2bda02e5646ea8 0.1s done
+#12 exporting config sha256:292006902a119a1275c799685fe7ef30f38fc4e1f26afa27ee75851441e1918b
+#12 exporting config sha256:292006902a119a1275c799685fe7ef30f38fc4e1f26afa27ee75851441e1918b 0.1s done
+#12 exporting attestation manifest sha256:4461062a0aca83cea18f25edb9b0371b1b0f769c62e27cfc1358a43a3fddf5be
+#12 exporting attestation manifest sha256:4461062a0aca83cea18f25edb9b0371b1b0f769c62e27cfc1358a43a3fddf5be 0.1s done
+#12 exporting manifest list sha256:eec0d39787130574ed093f5ad6a037a9e281a0eba944b7a91372679e2a18d19a 0.1s done
+#12 naming to docker.io/library/hw3-check-20021-26705-18497-app:latest
+#12 naming to docker.io/library/hw3-check-20021-26705-18497-app:latest 0.0s done
+#12 unpacking to docker.io/library/hw3-check-20021-26705-18497-app:latest
+#12 unpacking to docker.io/library/hw3-check-20021-26705-18497-app:latest 24.7s done
+#12 DONE 25.7s
+
+#13 resolving provenance for metadata file
+#13 DONE 0.0s
+ Image hw3-check-20021-26705-18497-app Built 
+ Network hw3-check-20021-26705-18497_default Creating 
+ Network hw3-check-20021-26705-18497_default Creating 
+ Volume hw3-check-20021-26705-18497_redis_data Creating 
+ Volume hw3-check-20021-26705-18497_redis_data Creating 
+ Volume hw3-check-20021-26705-18497_redis_data Created 
+ Volume hw3-check-20021-26705-18497_redis_data Created 
+ Network hw3-check-20021-26705-18497_default Created 
+ Network hw3-check-20021-26705-18497_default Created 
+ Container hw3-check-20021-26705-18497-redis-1 Creating 
+ Container hw3-check-20021-26705-18497-redis-1 Created 
+ Container hw3-check-20021-26705-18497-app-1 Creating 
+ Container hw3-check-20021-26705-18497-app-1 Created 
+ Container hw3-check-20021-26705-18497-redis-1 Starting 
+ Container hw3-check-20021-26705-18497-redis-1 Started 
+ Container hw3-check-20021-26705-18497-redis-1 Waiting 
+ Container hw3-check-20021-26705-18497-redis-1 Healthy 
+ Container hw3-check-20021-26705-18497-app-1 Starting 
+ Container hw3-check-20021-26705-18497-app-1 Started 
+app и redis готовы: http://127.0.0.1:32771
+GET / -> count=0
+POST /increment -> count=1
+POST /increment -> count=2
+POST /increment -> count=3
+POST /increment -> count=4
+POST /increment -> count=5
+GET / -> count=5
+
+2. Ограничения процесса app
+UID: 1000
+read_only=true, memory=268435456 байт, CPU=1000000000 nanoCPU
+
+3. Пересоздание только app
+ Container hw3-check-20021-26705-18497-app-1 Recreate 
+ Container hw3-check-20021-26705-18497-app-1 Recreated 
+ Container hw3-check-20021-26705-18497-app-1 Starting 
+ Container hw3-check-20021-26705-18497-app-1 Started 
+app и redis готовы: http://127.0.0.1:32772
+GET / -> count=5
+
+4. Полный down и up без удаления volume
+ Container hw3-check-20021-26705-18497-app-1 Stopping 
+ Container hw3-check-20021-26705-18497-app-1 Stopped 
+ Container hw3-check-20021-26705-18497-app-1 Removing 
+ Container hw3-check-20021-26705-18497-app-1 Removed 
+ Container hw3-check-20021-26705-18497-redis-1 Stopping 
+ Container hw3-check-20021-26705-18497-redis-1 Stopped 
+ Container hw3-check-20021-26705-18497-redis-1 Removing 
+ Container hw3-check-20021-26705-18497-redis-1 Removed 
+ Network hw3-check-20021-26705-18497_default Removing 
+ Network hw3-check-20021-26705-18497_default Removed 
+ Network hw3-check-20021-26705-18497_default Creating 
+ Network hw3-check-20021-26705-18497_default Creating 
+ Network hw3-check-20021-26705-18497_default Created 
+ Network hw3-check-20021-26705-18497_default Created 
+ Container hw3-check-20021-26705-18497-redis-1 Creating 
+ Container hw3-check-20021-26705-18497-redis-1 Created 
+ Container hw3-check-20021-26705-18497-app-1 Creating 
+ Container hw3-check-20021-26705-18497-app-1 Created 
+ Container hw3-check-20021-26705-18497-redis-1 Starting 
+ Container hw3-check-20021-26705-18497-redis-1 Started 
+ Container hw3-check-20021-26705-18497-redis-1 Waiting 
+ Container hw3-check-20021-26705-18497-redis-1 Healthy 
+ Container hw3-check-20021-26705-18497-app-1 Starting 
+ Container hw3-check-20021-26705-18497-app-1 Started 
+app и redis готовы: http://127.0.0.1:32773
+GET / -> count=5
+
+5. Остановка и повторный запуск Redis
+ Container hw3-check-20021-26705-18497-redis-1 Stopping 
+ Container hw3-check-20021-26705-18497-redis-1 Stopped 
+GET /healthz -> HTTP 200
+GET /readyz -> HTTP 503
+GET / -> HTTP 503
+POST /increment -> HTTP 503
+ Container hw3-check-20021-26705-18497-redis-1 Starting 
+ Container hw3-check-20021-26705-18497-redis-1 Started 
+app и redis готовы: http://127.0.0.1:32773
+GET / -> count=5
+POST /increment -> count=6
+
+6. Согласованная резервная копия
+ Container hw3-check-20021-26705-18497-app-1 Stopping 
+ Container hw3-check-20021-26705-18497-app-1 Stopped 
+ Container hw3-check-20021-26705-18497-redis-1 Stopping 
+ Container hw3-check-20021-26705-18497-redis-1 Stopped 
+Архив: /home/ser/hw3/backups/hw3-check-20021-26705-18497.tar
+
+7. Удаление исходного тестового проекта с volumes
+ Container hw3-check-20021-26705-18497-app-1 Stopping 
+ Container hw3-check-20021-26705-18497-app-1 Stopped 
+ Container hw3-check-20021-26705-18497-app-1 Removing 
+ Container hw3-check-20021-26705-18497-app-1 Removed 
+ Container hw3-check-20021-26705-18497-redis-1 Stopping 
+ Container hw3-check-20021-26705-18497-redis-1 Stopped 
+ Container hw3-check-20021-26705-18497-redis-1 Removing 
+ Container hw3-check-20021-26705-18497-redis-1 Removed 
+ Network hw3-check-20021-26705-18497_default Removing 
+ Volume hw3-check-20021-26705-18497_redis_data Removing 
+ Volume hw3-check-20021-26705-18497_redis_data Removed 
+ Image hw3-check-20021-26705-18497-app:latest Removing 
+ Network hw3-check-20021-26705-18497_default Removed 
+ Image hw3-check-20021-26705-18497-app:latest Removed 
+
+8. Проверка восстановления из архива
+ Network hw3-check-20021-26705-18497-restore_default Creating 
+ Network hw3-check-20021-26705-18497-restore_default Creating 
+ Volume hw3-check-20021-26705-18497-restore_redis_data Creating 
+ Volume hw3-check-20021-26705-18497-restore_redis_data Creating 
+ Volume hw3-check-20021-26705-18497-restore_redis_data Created 
+ Volume hw3-check-20021-26705-18497-restore_redis_data Created 
+ Network hw3-check-20021-26705-18497-restore_default Created 
+ Network hw3-check-20021-26705-18497-restore_default Created 
+ Container hw3-check-20021-26705-18497-restore-redis-1 Creating 
+ Container hw3-check-20021-26705-18497-restore-redis-1 Created 
+ Image hw3-check-20021-26705-18497-restore-app Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 522B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 384B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.13-slim
+#3 DONE 1.8s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 95B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 94B done
+#5 DONE 0.1s
+
+#6 [1/6] FROM docker.io/library/python:3.13-slim@sha256:e48f59cdba69a3cbd9ed2cf0f348d90d45a8d350d98134cf1070bc106ee9ed90
+#6 resolve docker.io/library/python:3.13-slim@sha256:e48f59cdba69a3cbd9ed2cf0f348d90d45a8d350d98134cf1070bc106ee9ed90 0.1s done
+#6 DONE 0.1s
+
+#7 [4/6] RUN pip install --no-cache-dir -r requirements.txt
+#7 CACHED
+
+#8 [5/6] RUN useradd --create-home --uid 1000 --user-group app     && mkdir -p /data     && chown app:app /data
+#8 CACHED
+
+#9 [2/6] WORKDIR /app
+#9 CACHED
+
+#10 [3/6] COPY app/requirements.txt .
+#10 CACHED
+
+#11 [6/6] COPY app/app.py .
+#11 CACHED
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers done
+#12 exporting manifest sha256:cd801029cc08aa6e8a82e3df5d820b501709824606000c2071e9ea5843d08c4f 0.1s done
+#12 exporting config sha256:40f9f4e8d5cca8418ad427317afd37b140ab3742294e0887ce2abe578663515a 0.1s done
+#12 exporting attestation manifest sha256:7eda7d9682924e7cebca06403871152503043aeacbd66d696c9c6273b6067dea 0.1s done
+#12 exporting manifest list sha256:e23466283ac43d4de2d15fe8f5fe1dbacf6092b3e7814683e0ce4304934bff30
+#12 exporting manifest list sha256:e23466283ac43d4de2d15fe8f5fe1dbacf6092b3e7814683e0ce4304934bff30 0.1s done
+#12 naming to docker.io/library/hw3-check-20021-26705-18497-restore-app:latest 0.0s done
+#12 unpacking to docker.io/library/hw3-check-20021-26705-18497-restore-app:latest
+#12 unpacking to docker.io/library/hw3-check-20021-26705-18497-restore-app:latest 4.5s done
+#12 DONE 5.0s
+
+#13 resolving provenance for metadata file
+#13 DONE 0.0s
+ Image hw3-check-20021-26705-18497-restore-app Built 
+ Container hw3-check-20021-26705-18497-restore-app-1 Creating 
+ Container hw3-check-20021-26705-18497-restore-app-1 Created 
+ Container hw3-check-20021-26705-18497-restore-redis-1 Starting 
+ Container hw3-check-20021-26705-18497-restore-redis-1 Started 
+ Container hw3-check-20021-26705-18497-restore-redis-1 Waiting 
+ Container hw3-check-20021-26705-18497-restore-redis-1 Healthy 
+ Container hw3-check-20021-26705-18497-restore-app-1 Starting 
+ Container hw3-check-20021-26705-18497-restore-app-1 Started 
+app и redis готовы: http://127.0.0.1:32774
+GET / -> count=6
+POST /increment -> count=7
+ Container hw3-check-20021-26705-18497-restore-app-1 Stopping 
+ Container hw3-check-20021-26705-18497-restore-app-1 Stopped 
+ Container hw3-check-20021-26705-18497-restore-app-1 Removing 
+ Container hw3-check-20021-26705-18497-restore-app-1 Removed 
+ Container hw3-check-20021-26705-18497-restore-redis-1 Stopping 
+ Container hw3-check-20021-26705-18497-restore-redis-1 Stopped 
+ Container hw3-check-20021-26705-18497-restore-redis-1 Removing 
+ Container hw3-check-20021-26705-18497-restore-redis-1 Removed 
+ Network hw3-check-20021-26705-18497-restore_default Removing 
+ Volume hw3-check-20021-26705-18497-restore_redis_data Removing 
+ Volume hw3-check-20021-26705-18497-restore_redis_data Removed 
+ Image hw3-check-20021-26705-18497-restore-app:latest Removing 
+ Network hw3-check-20021-26705-18497-restore_default Removed 
+ Image hw3-check-20021-26705-18497-restore-app:latest Removed 
+
+OK: все проверки пройдены, тестовые контейнеры и volumes удалены.
+Резервная копия сохранена: /home/ser/hw3/backups/hw3-check-20021-26705-18497.tar

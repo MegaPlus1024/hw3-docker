@@ -1,0 +1,123 @@
+Compose-проект: hw3_sqlite_1795362032-18484-2964; APP_PORT=0; GREETING=Привет, Docker!
+$ APP_PORT=0 GREETING=Привет\,\ Docker\! docker compose --env-file /dev/null -p hw3_sqlite_1795362032-18484-2964 -f compose.sqlite.yaml up -d --build --wait --wait-timeout 90
+ Image hw3_sqlite_1795362032-18484-2964-app Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 516B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 384B done
+#2 DONE 0.1s
+
+#3 [internal] load metadata for docker.io/library/python:3.13-slim
+#3 DONE 0.8s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 95B done
+#4 DONE 0.1s
+
+#5 [internal] load build context
+#5 transferring context: 94B done
+#5 DONE 0.1s
+
+#6 [1/6] FROM docker.io/library/python:3.13-slim@sha256:e48f59cdba69a3cbd9ed2cf0f348d90d45a8d350d98134cf1070bc106ee9ed90
+#6 resolve docker.io/library/python:3.13-slim@sha256:e48f59cdba69a3cbd9ed2cf0f348d90d45a8d350d98134cf1070bc106ee9ed90
+#6 resolve docker.io/library/python:3.13-slim@sha256:e48f59cdba69a3cbd9ed2cf0f348d90d45a8d350d98134cf1070bc106ee9ed90 0.1s done
+#6 DONE 0.1s
+
+#7 [2/6] WORKDIR /app
+#7 CACHED
+
+#8 [3/6] COPY app/requirements.txt .
+#8 CACHED
+
+#9 [4/6] RUN pip install --no-cache-dir -r requirements.txt
+#9 CACHED
+
+#10 [5/6] RUN useradd --create-home --uid 1000 --user-group app     && mkdir -p /data     && chown app:app /data
+#10 CACHED
+
+#11 [6/6] COPY app/app.py .
+#11 CACHED
+
+#12 exporting to image
+#12 exporting layers 0.0s done
+#12 exporting manifest sha256:fce24615ad4a15a668c8b75f9dac16b19560f90ea987c8e759cb1f9040115ef0 0.1s done
+#12 exporting config sha256:5abfb6b45ffcd3e3a21b84fc9cb7d4933429def18d8f4664f634dc4c997e4a13 0.1s done
+#12 exporting attestation manifest sha256:fb1d723c2095878f023133f6ac8c09150116c7c854121f34d4defcc0687ebde2 0.1s done
+#12 exporting manifest list sha256:5c716de500aca49726df8e25b9bd8a7bbf895b19cbc53efbe8f9d781d27d9bff
+#12 exporting manifest list sha256:5c716de500aca49726df8e25b9bd8a7bbf895b19cbc53efbe8f9d781d27d9bff 0.1s done
+#12 naming to docker.io/library/hw3_sqlite_1795362032-18484-2964-app:latest 0.0s done
+#12 unpacking to docker.io/library/hw3_sqlite_1795362032-18484-2964-app:latest
+#12 unpacking to docker.io/library/hw3_sqlite_1795362032-18484-2964-app:latest 3.4s done
+#12 DONE 3.9s
+
+#13 resolving provenance for metadata file
+#13 DONE 0.0s
+ Image hw3_sqlite_1795362032-18484-2964-app Built 
+ Network hw3_sqlite_1795362032-18484-2964_default Creating 
+ Volume hw3_sqlite_1795362032-18484-2964_sqlite_data Creating 
+ Volume hw3_sqlite_1795362032-18484-2964_sqlite_data Creating 
+ Network hw3_sqlite_1795362032-18484-2964_default Creating 
+ Volume hw3_sqlite_1795362032-18484-2964_sqlite_data Created 
+ Volume hw3_sqlite_1795362032-18484-2964_sqlite_data Created 
+ Network hw3_sqlite_1795362032-18484-2964_default Created 
+ Network hw3_sqlite_1795362032-18484-2964_default Created 
+ Container hw3_sqlite_1795362032-18484-2964-app-1 Creating 
+ Container hw3_sqlite_1795362032-18484-2964-app-1 Created 
+ Container hw3_sqlite_1795362032-18484-2964-app-1 Starting 
+ Container hw3_sqlite_1795362032-18484-2964-app-1 Started 
+ Container hw3_sqlite_1795362032-18484-2964-app-1 Waiting 
+ Container hw3_sqlite_1795362032-18484-2964-app-1 Healthy 
+$ APP_PORT=0 GREETING=Привет\,\ Docker\! docker compose --env-file /dev/null -p hw3_sqlite_1795362032-18484-2964 -f compose.sqlite.yaml ps -q app
+$ curl -fsS -X GET http://127.0.0.1:32769/
+{"greeting": "Привет, Docker!", "count": 0, "hostname": "3da4312cd46c", "storage": "sqlite"}
+OK: count=0, greeting и storage совпали
+$ curl -fsS -X POST http://127.0.0.1:32769/increment
+{"greeting": "Привет, Docker!", "count": 1, "hostname": "3da4312cd46c", "storage": "sqlite"}
+OK: count=1, greeting и storage совпали
+$ curl -fsS -X POST http://127.0.0.1:32769/increment
+{"greeting": "Привет, Docker!", "count": 2, "hostname": "3da4312cd46c", "storage": "sqlite"}
+OK: count=2, greeting и storage совпали
+$ curl -fsS -X POST http://127.0.0.1:32769/increment
+{"greeting": "Привет, Docker!", "count": 3, "hostname": "3da4312cd46c", "storage": "sqlite"}
+OK: count=3, greeting и storage совпали
+$ APP_PORT=0 GREETING=Привет\,\ Docker\! docker compose --env-file /dev/null -p hw3_sqlite_1795362032-18484-2964 -f compose.sqlite.yaml down
+ Container hw3_sqlite_1795362032-18484-2964-app-1 Stopping 
+ Container hw3_sqlite_1795362032-18484-2964-app-1 Stopped 
+ Container hw3_sqlite_1795362032-18484-2964-app-1 Removing 
+ Container hw3_sqlite_1795362032-18484-2964-app-1 Removed 
+ Network hw3_sqlite_1795362032-18484-2964_default Removing 
+ Network hw3_sqlite_1795362032-18484-2964_default Removed 
+$ APP_PORT=0 GREETING=Привет\,\ Docker\! docker compose --env-file /dev/null -p hw3_sqlite_1795362032-18484-2964 -f compose.sqlite.yaml up -d --wait --wait-timeout 90
+ Network hw3_sqlite_1795362032-18484-2964_default Creating 
+ Network hw3_sqlite_1795362032-18484-2964_default Creating 
+ Network hw3_sqlite_1795362032-18484-2964_default Created 
+ Network hw3_sqlite_1795362032-18484-2964_default Created 
+ Container hw3_sqlite_1795362032-18484-2964-app-1 Creating 
+ Container hw3_sqlite_1795362032-18484-2964-app-1 Created 
+ Container hw3_sqlite_1795362032-18484-2964-app-1 Starting 
+ Container hw3_sqlite_1795362032-18484-2964-app-1 Started 
+ Container hw3_sqlite_1795362032-18484-2964-app-1 Waiting 
+ Container hw3_sqlite_1795362032-18484-2964-app-1 Healthy 
+$ APP_PORT=0 GREETING=Привет\,\ Docker\! docker compose --env-file /dev/null -p hw3_sqlite_1795362032-18484-2964 -f compose.sqlite.yaml ps -q app
+$ curl -fsS -X GET http://127.0.0.1:32770/
+{"greeting": "Привет, Docker!", "count": 3, "hostname": "d201a0bf8cb0", "storage": "sqlite"}
+OK: count=3, greeting и storage совпали
+$ APP_PORT=0 GREETING=Привет\,\ Docker\! docker compose --env-file /dev/null -p hw3_sqlite_1795362032-18484-2964 -f compose.sqlite.yaml logs --no-color
+app-1  | 2026-11-22 15:41:50,424 listening port=8000 storage=sqlite
+app-1  | 2026-11-22 15:42:01,077 http 127.0.0.1 "GET /readyz HTTP/1.1" 200 -
+app-1  | 2026-11-22 15:42:02,914 http 172.18.0.1 "GET /readyz HTTP/1.1" 200 -
+app-1  | 2026-11-22 15:42:02,984 http 172.18.0.1 "GET / HTTP/1.1" 200 -
+$ APP_PORT=0 GREETING=Привет\,\ Docker\! docker compose --env-file /dev/null -p hw3_sqlite_1795362032-18484-2964 -f compose.sqlite.yaml down -v --remove-orphans
+ Container hw3_sqlite_1795362032-18484-2964-app-1 Stopping 
+ Container hw3_sqlite_1795362032-18484-2964-app-1 Stopped 
+ Container hw3_sqlite_1795362032-18484-2964-app-1 Removing 
+ Container hw3_sqlite_1795362032-18484-2964-app-1 Removed 
+ Volume hw3_sqlite_1795362032-18484-2964_sqlite_data Removing 
+ Network hw3_sqlite_1795362032-18484-2964_default Removing 
+ Volume hw3_sqlite_1795362032-18484-2964_sqlite_data Removed 
+ Network hw3_sqlite_1795362032-18484-2964_default Removed 
+Untagged: hw3_sqlite_1795362032-18484-2964-app:latest
+Deleted: sha256:5c716de500aca49726df8e25b9bd8a7bbf895b19cbc53efbe8f9d781d27d9bff
+Уровень 6: OK, после удаления контейнера сохранился count=3

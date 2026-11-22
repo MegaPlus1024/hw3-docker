@@ -1,0 +1,6 @@
+PASS: Docker Compose v2.39.2 parsed compose.yaml
+PASS: final configuration declares read_only, 256 MiB, 1 CPU, Redis readiness/volume, only app published
+PASS: compose.yaml supports APP_PORT=0 and GREETING override
+PASS: Docker Compose v2.39.2 parsed compose.sqlite.yaml
+PASS: compose.sqlite.yaml supports APP_PORT=0 and GREETING override
+Configuration validation only: no Docker daemon or containers were started.

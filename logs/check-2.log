@@ -1,0 +1,260 @@
+Docker Compose version v5.7.0
+
+1. Новый проект hw3-check-23626-15408-24236
+ Image hw3-check-23626-15408-24236-app Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 506B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 384B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.13-slim
+#3 DONE 4.2s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 32B 0.0s
+#4 transferring context: 95B 0.1s done
+#4 DONE 0.6s
+
+#5 [internal] load build context
+#5 transferring context: 94B 0.0s done
+#5 DONE 0.1s
+
+#6 [1/6] FROM docker.io/library/python:3.13-slim@sha256:e48f59cdba69a3cbd9ed2cf0f348d90d45a8d350d98134cf1070bc106ee9ed90
+#6 resolve docker.io/library/python:3.13-slim@sha256:e48f59cdba69a3cbd9ed2cf0f348d90d45a8d350d98134cf1070bc106ee9ed90
+#6 resolve docker.io/library/python:3.13-slim@sha256:e48f59cdba69a3cbd9ed2cf0f348d90d45a8d350d98134cf1070bc106ee9ed90 0.1s done
+#6 DONE 0.2s
+
+#7 [3/6] COPY app/requirements.txt .
+#7 CACHED
+
+#8 [4/6] RUN pip install --no-cache-dir -r requirements.txt
+#8 CACHED
+
+#9 [5/6] RUN useradd --create-home --uid 1000 --user-group app     && mkdir -p /data     && chown app:app /data
+#9 CACHED
+
+#10 [2/6] WORKDIR /app
+#10 CACHED
+
+#11 [6/6] COPY app/app.py .
+#11 CACHED
+
+#12 exporting to image
+#12 exporting layers done
+#12 exporting manifest sha256:bb54bba6133f9905cd7ebccb76186d271d2cdfe869b1bb5984ccfcd37f905e57 0.1s done
+#12 exporting config sha256:ca052e3508c9b96f84c9d5a4d6a3c7819baba7edf36cbf0ecee4221d97108493
+#12 exporting config sha256:ca052e3508c9b96f84c9d5a4d6a3c7819baba7edf36cbf0ecee4221d97108493 0.1s done
+#12 exporting attestation manifest sha256:a30de4946f045e59ce4b6ce84b769dc6509bcd2f0b64ce987fb6abb4712db429
+#12 exporting attestation manifest sha256:a30de4946f045e59ce4b6ce84b769dc6509bcd2f0b64ce987fb6abb4712db429 0.1s done
+#12 exporting manifest list sha256:854ec0dfbff2397d918c0e389002796683d2f89420eb019a7e5d9bd015e97cf6 0.1s done
+#12 naming to docker.io/library/hw3-check-23626-15408-24236-app:latest
+#12 naming to docker.io/library/hw3-check-23626-15408-24236-app:latest 0.0s done
+#12 unpacking to docker.io/library/hw3-check-23626-15408-24236-app:latest
+#12 unpacking to docker.io/library/hw3-check-23626-15408-24236-app:latest 3.4s done
+#12 DONE 3.9s
+
+#13 resolving provenance for metadata file
+#13 DONE 0.0s
+ Image hw3-check-23626-15408-24236-app Built 
+ Network hw3-check-23626-15408-24236_default Creating 
+ Network hw3-check-23626-15408-24236_default Creating 
+ Volume hw3-check-23626-15408-24236_redis_data Creating 
+ Volume hw3-check-23626-15408-24236_redis_data Creating 
+ Volume hw3-check-23626-15408-24236_redis_data Created 
+ Volume hw3-check-23626-15408-24236_redis_data Created 
+ Network hw3-check-23626-15408-24236_default Created 
+ Network hw3-check-23626-15408-24236_default Created 
+ Container hw3-check-23626-15408-24236-redis-1 Creating 
+ Container hw3-check-23626-15408-24236-redis-1 Created 
+ Container hw3-check-23626-15408-24236-app-1 Creating 
+ Container hw3-check-23626-15408-24236-app-1 Created 
+ Container hw3-check-23626-15408-24236-redis-1 Starting 
+ Container hw3-check-23626-15408-24236-redis-1 Started 
+ Container hw3-check-23626-15408-24236-redis-1 Waiting 
+ Container hw3-check-23626-15408-24236-redis-1 Healthy 
+ Container hw3-check-23626-15408-24236-app-1 Starting 
+ Container hw3-check-23626-15408-24236-app-1 Started 
+app и redis готовы: http://127.0.0.1:32775
+GET / -> count=0
+POST /increment -> count=1
+POST /increment -> count=2
+POST /increment -> count=3
+POST /increment -> count=4
+POST /increment -> count=5
+GET / -> count=5
+
+2. Ограничения процесса app
+UID: 1000
+read_only=true, memory=268435456 байт, CPU=1000000000 nanoCPU
+
+3. Пересоздание только app
+ Container hw3-check-23626-15408-24236-app-1 Recreate 
+ Container hw3-check-23626-15408-24236-app-1 Recreated 
+ Container hw3-check-23626-15408-24236-app-1 Starting 
+ Container hw3-check-23626-15408-24236-app-1 Started 
+app и redis готовы: http://127.0.0.1:32776
+GET / -> count=5
+
+4. Полный down и up без удаления volume
+ Container hw3-check-23626-15408-24236-app-1 Stopping 
+ Container hw3-check-23626-15408-24236-app-1 Stopped 
+ Container hw3-check-23626-15408-24236-app-1 Removing 
+ Container hw3-check-23626-15408-24236-app-1 Removed 
+ Container hw3-check-23626-15408-24236-redis-1 Stopping 
+ Container hw3-check-23626-15408-24236-redis-1 Stopped 
+ Container hw3-check-23626-15408-24236-redis-1 Removing 
+ Container hw3-check-23626-15408-24236-redis-1 Removed 
+ Network hw3-check-23626-15408-24236_default Removing 
+ Network hw3-check-23626-15408-24236_default Removed 
+ Network hw3-check-23626-15408-24236_default Creating 
+ Network hw3-check-23626-15408-24236_default Creating 
+ Network hw3-check-23626-15408-24236_default Created 
+ Network hw3-check-23626-15408-24236_default Created 
+ Container hw3-check-23626-15408-24236-redis-1 Creating 
+ Container hw3-check-23626-15408-24236-redis-1 Created 
+ Container hw3-check-23626-15408-24236-app-1 Creating 
+ Container hw3-check-23626-15408-24236-app-1 Created 
+ Container hw3-check-23626-15408-24236-redis-1 Starting 
+ Container hw3-check-23626-15408-24236-redis-1 Started 
+ Container hw3-check-23626-15408-24236-redis-1 Waiting 
+ Container hw3-check-23626-15408-24236-redis-1 Healthy 
+ Container hw3-check-23626-15408-24236-app-1 Starting 
+ Container hw3-check-23626-15408-24236-app-1 Started 
+app и redis готовы: http://127.0.0.1:32777
+GET / -> count=5
+
+5. Остановка и повторный запуск Redis
+ Container hw3-check-23626-15408-24236-redis-1 Stopping 
+ Container hw3-check-23626-15408-24236-redis-1 Stopped 
+GET /healthz -> HTTP 200
+GET /readyz -> HTTP 503
+GET / -> HTTP 503
+POST /increment -> HTTP 503
+ Container hw3-check-23626-15408-24236-redis-1 Starting 
+ Container hw3-check-23626-15408-24236-redis-1 Started 
+app и redis готовы: http://127.0.0.1:32777
+GET / -> count=5
+POST /increment -> count=6
+
+6. Согласованная резервная копия
+ Container hw3-check-23626-15408-24236-app-1 Stopping 
+ Container hw3-check-23626-15408-24236-app-1 Stopped 
+ Container hw3-check-23626-15408-24236-redis-1 Stopping 
+ Container hw3-check-23626-15408-24236-redis-1 Stopped 
+Архив: /home/ser/hw3/backups/hw3-check-23626-15408-24236.tar
+
+7. Удаление исходного тестового проекта с volumes
+ Container hw3-check-23626-15408-24236-app-1 Stopping 
+ Container hw3-check-23626-15408-24236-app-1 Stopped 
+ Container hw3-check-23626-15408-24236-app-1 Removing 
+ Container hw3-check-23626-15408-24236-app-1 Removed 
+ Container hw3-check-23626-15408-24236-redis-1 Stopping 
+ Container hw3-check-23626-15408-24236-redis-1 Stopped 
+ Container hw3-check-23626-15408-24236-redis-1 Removing 
+ Container hw3-check-23626-15408-24236-redis-1 Removed 
+ Volume hw3-check-23626-15408-24236_redis_data Removing 
+ Network hw3-check-23626-15408-24236_default Removing 
+ Volume hw3-check-23626-15408-24236_redis_data Removed 
+ Image hw3-check-23626-15408-24236-app:latest Removing 
+ Network hw3-check-23626-15408-24236_default Removed 
+ Image hw3-check-23626-15408-24236-app:latest Removed 
+
+8. Проверка восстановления из архива
+ Network hw3-check-23626-15408-24236-restore_default Creating 
+ Volume hw3-check-23626-15408-24236-restore_redis_data Creating 
+ Network hw3-check-23626-15408-24236-restore_default Creating 
+ Volume hw3-check-23626-15408-24236-restore_redis_data Creating 
+ Volume hw3-check-23626-15408-24236-restore_redis_data Created 
+ Volume hw3-check-23626-15408-24236-restore_redis_data Created 
+ Network hw3-check-23626-15408-24236-restore_default Created 
+ Network hw3-check-23626-15408-24236-restore_default Created 
+ Container hw3-check-23626-15408-24236-restore-redis-1 Creating 
+ Container hw3-check-23626-15408-24236-restore-redis-1 Created 
+ Image hw3-check-23626-15408-24236-restore-app Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 522B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 384B 0.0s done
+#2 DONE 0.1s
+
+#3 [internal] load metadata for docker.io/library/python:3.13-slim
+#3 DONE 1.1s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 95B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 94B done
+#5 DONE 0.1s
+
+#6 [1/6] FROM docker.io/library/python:3.13-slim@sha256:e48f59cdba69a3cbd9ed2cf0f348d90d45a8d350d98134cf1070bc106ee9ed90
+#6 resolve docker.io/library/python:3.13-slim@sha256:e48f59cdba69a3cbd9ed2cf0f348d90d45a8d350d98134cf1070bc106ee9ed90
+#6 resolve docker.io/library/python:3.13-slim@sha256:e48f59cdba69a3cbd9ed2cf0f348d90d45a8d350d98134cf1070bc106ee9ed90 0.1s done
+#6 DONE 0.1s
+
+#7 [3/6] COPY app/requirements.txt .
+#7 CACHED
+
+#8 [4/6] RUN pip install --no-cache-dir -r requirements.txt
+#8 CACHED
+
+#9 [5/6] RUN useradd --create-home --uid 1000 --user-group app     && mkdir -p /data     && chown app:app /data
+#9 CACHED
+
+#10 [2/6] WORKDIR /app
+#10 CACHED
+
+#11 [6/6] COPY app/app.py .
+#11 CACHED
+
+#12 exporting to image
+#12 exporting layers done
+#12 exporting manifest sha256:867b75faea97e9d261eb323e2dc07f9f37d01ca04261faceb1cfb63627252aad 0.0s done
+#12 exporting config sha256:21f614d5dfdf2ada174c482c4582090b60f4183af531bf3935d110df85468915
+#12 exporting config sha256:21f614d5dfdf2ada174c482c4582090b60f4183af531bf3935d110df85468915 0.1s done
+#12 exporting attestation manifest sha256:f30125acf409ea8f840e96f14e3717ba14aee3efc915301d37ab1c75819f8660
+#12 exporting attestation manifest sha256:f30125acf409ea8f840e96f14e3717ba14aee3efc915301d37ab1c75819f8660 0.1s done
+#12 exporting manifest list sha256:08e90812f7d82af85d8f9b62a42beb4edd24ca3af14941d5aea6eccc7375c25c 0.1s done
+#12 naming to docker.io/library/hw3-check-23626-15408-24236-restore-app:latest
+#12 naming to docker.io/library/hw3-check-23626-15408-24236-restore-app:latest 0.0s done
+#12 unpacking to docker.io/library/hw3-check-23626-15408-24236-restore-app:latest
+#12 unpacking to docker.io/library/hw3-check-23626-15408-24236-restore-app:latest 3.1s done
+#12 DONE 3.5s
+
+#13 resolving provenance for metadata file
+#13 DONE 0.0s
+ Image hw3-check-23626-15408-24236-restore-app Built 
+ Container hw3-check-23626-15408-24236-restore-app-1 Creating 
+ Container hw3-check-23626-15408-24236-restore-app-1 Created 
+ Container hw3-check-23626-15408-24236-restore-redis-1 Starting 
+ Container hw3-check-23626-15408-24236-restore-redis-1 Started 
+ Container hw3-check-23626-15408-24236-restore-redis-1 Waiting 
+ Container hw3-check-23626-15408-24236-restore-redis-1 Healthy 
+ Container hw3-check-23626-15408-24236-restore-app-1 Starting 
+ Container hw3-check-23626-15408-24236-restore-app-1 Started 
+app и redis готовы: http://127.0.0.1:32778
+GET / -> count=6
+POST /increment -> count=7
+ Container hw3-check-23626-15408-24236-restore-app-1 Stopping 
+ Container hw3-check-23626-15408-24236-restore-app-1 Stopped 
+ Container hw3-check-23626-15408-24236-restore-app-1 Removing 
+ Container hw3-check-23626-15408-24236-restore-app-1 Removed 
+ Container hw3-check-23626-15408-24236-restore-redis-1 Stopping 
+ Container hw3-check-23626-15408-24236-restore-redis-1 Stopped 
+ Container hw3-check-23626-15408-24236-restore-redis-1 Removing 
+ Container hw3-check-23626-15408-24236-restore-redis-1 Removed 
+ Network hw3-check-23626-15408-24236-restore_default Removing 
+ Volume hw3-check-23626-15408-24236-restore_redis_data Removing 
+ Volume hw3-check-23626-15408-24236-restore_redis_data Removed 
+ Image hw3-check-23626-15408-24236-restore-app:latest Removing 
+ Network hw3-check-23626-15408-24236-restore_default Removed 
+ Image hw3-check-23626-15408-24236-restore-app:latest Removed 
+
+OK: все проверки пройдены, тестовые контейнеры и volumes удалены.
+Резервная копия сохранена: /home/ser/hw3/backups/hw3-check-23626-15408-24236.tar

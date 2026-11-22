@@ -1,0 +1,37 @@
+LOCAL APPLICATION VALIDATION ONLY — NOT A DOCKER / COMPOSE RUN
+Container user, read-only root, memory/CPU limits and Docker volumes were not tested here.
+Exact unmodified app SHA256: a977c2ae40a67f99f73afd6ae36777d26c3c6087324dc7662399a0412c1d99bd
+Python: 3.12.14
+Python redis client: 5.2.1
+Redis server v=7.4.1 sha=74b289a0:0 malloc=libc bits=64 build=b10ee5f0c8bf80c5
+STAGE 1 — SQLite: initial value, greeting and increment
+PASS GET /: HTTP 200; {"greeting": "Привет, Docker!", "count": 0, "hostname": "9e0c4e53f7d9", "storage": "sqlite"}
+PASS POST /increment: HTTP 200; {"greeting": "Привет, Docker!", "count": 1, "hostname": "9e0c4e53f7d9", "storage": "sqlite"}
+PASS POST /increment: HTTP 200; {"greeting": "Привет, Docker!", "count": 2, "hostname": "9e0c4e53f7d9", "storage": "sqlite"}
+PASS POST /increment: HTTP 200; {"greeting": "Привет, Docker!", "count": 3, "hostname": "9e0c4e53f7d9", "storage": "sqlite"}
+PASS GET /: HTTP 200; {"greeting": "Привет, Docker!", "count": 3, "hostname": "9e0c4e53f7d9", "storage": "sqlite"}
+STAGE 2 — SQLite: process restart, same database file
+PASS GET /: HTTP 200; {"greeting": "Привет, Docker!", "count": 3, "hostname": "9e0c4e53f7d9", "storage": "sqlite"}
+STAGE 3 — Redis: empty data directory and three increments
+PASS GET /: HTTP 200; {"greeting": "Привет, Docker!", "count": 0, "hostname": "9e0c4e53f7d9", "storage": "redis"}
+PASS POST /increment: HTTP 200; {"greeting": "Привет, Docker!", "count": 1, "hostname": "9e0c4e53f7d9", "storage": "redis"}
+PASS POST /increment: HTTP 200; {"greeting": "Привет, Docker!", "count": 2, "hostname": "9e0c4e53f7d9", "storage": "redis"}
+PASS POST /increment: HTTP 200; {"greeting": "Привет, Docker!", "count": 3, "hostname": "9e0c4e53f7d9", "storage": "redis"}
+STAGE 4 — Restart app only, retain Redis data
+PASS GET /: HTTP 200; {"greeting": "Привет, Docker!", "count": 3, "hostname": "9e0c4e53f7d9", "storage": "redis"}
+STAGE 5 — Stop Redis; same app stays alive
+PASS GET /healthz: HTTP 200; {"status": "alive"}
+PASS GET /readyz: HTTP 503; {"error": "storage_unavailable"}
+PASS POST /increment: HTTP 503; {"error": "storage_unavailable"}
+PASS GET /: HTTP 503; {"error": "storage_unavailable"}
+STAGE 6 — Restart Redis; same app recovers without restart
+PASS app process remained running: PID 26
+PASS GET /: HTTP 200; {"greeting": "Привет, Docker!", "count": 3, "hostname": "9e0c4e53f7d9", "storage": "redis"}
+PASS POST /increment: HTTP 200; {"greeting": "Привет, Docker!", "count": 4, "hostname": "9e0c4e53f7d9", "storage": "redis"}
+STAGE 7 — Stop app and Redis; archive complete data directory
+PASS backup created: local-redis-backup.tar, 10240 bytes
+Archived files: appendonlydir, appendonlydir/appendonly.aof.1.base.rdb, appendonlydir/appendonly.aof.1.incr.aof, appendonlydir/appendonly.aof.manifest
+STAGE 8 — Restore backup into fresh directory and restart
+PASS GET /: HTTP 200; {"greeting": "Привет, Docker!", "count": 4, "hostname": "9e0c4e53f7d9", "storage": "redis"}
+PASS POST /increment: HTTP 200; {"greeting": "Привет, Docker!", "count": 5, "hostname": "9e0c4e53f7d9", "storage": "redis"}
+PASS — all local application checks completed; no Docker run is claimed.
